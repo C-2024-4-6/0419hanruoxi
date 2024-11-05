@@ -4,10 +4,10 @@ using namespace std;
 int main()
 {
     float hua, she;
-    cout << "ÇëÊäÈë»ªÊÏÎÂ¶È£º" << endl;
+    cout << "è¯·è¾“å…¥åŽæ°æ¸©åº¦ï¼š" << endl;
     cin >> hua;
     she = (hua - 32) * 5 / 9;
     cout.setf(ios::fixed);
-    cout << "×ª»¯³ÉÉãÊÏÎÂ¶ÈÎª£º" << setprecision(2) << she << endl;
+    cout << "è½¬åŒ–æˆæ‘„æ°æ¸©åº¦ä¸ºï¼š" << setprecision(2) << she << endl;
     return 0;
 }
