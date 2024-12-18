@@ -2,7 +2,7 @@
 using namespace std;
 int main() {
 	char ch;
-	cout << "ÇëÊäÈëÒ»¸ö×Ö·û£º" << endl;
+	cout << "Ã‡Ã«ÃŠÃ¤ÃˆÃ«Ã’Â»Â¸Ã¶Ã—Ã–Â·Ã»Â£Âº" << endl;
 	cin >> ch;
 	if (ch >= 'a' && ch <= 'z')
 	{
@@ -10,7 +10,7 @@ int main() {
 	}
 	else
 	{
-		cout << char(ch+1) << endl;
+		cout << (int)char(ch+1) << endl;
 	}
 	return 0;
 }
