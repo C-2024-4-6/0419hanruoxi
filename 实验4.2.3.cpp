@@ -1,40 +1,42 @@
 #include<iostream>
-#include<cstring>
-#include<cctype>
 using namespace std;
-int parseHex(const char* const hexString)
+void swap(int* a,int* b)
+{ 
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+bool changed = true;
+void bubbleSort(int* arr, int size)
 {
-	int result = 0;
-	int length = strlen(hexString);
-	for (int i = 0; i < length; i++)
+	do
 	{
-		char ch = hexString[i];
-		int digit;
-		if (isdigit(ch))
-		{
-			digit = ch - '0';
-		}
-		else if (ch >= 'A' && ch <= 'F')
-		{
-			digit = ch - 'A' + 10;
-		}
-		else {
-			cout << "输入的不是合法的十六进制字符串" << endl;
-			return -1;
-		}
-		result = result * 16 + digit;
-	}
-		return result;
+		 changed = false;
+		for(int i=0;i<size-1;i++)
+			if (arr[i] > arr[i + 1])
+			{
+				swap(&arr[i], &arr[i + 1]);
+				changed = true;
+			}
+	} while (changed);
 }
 int main()
 {
-	char hexString[100];
-	cout << "请输入一个16进制字符串：" << endl;
-	cin >> hexString;
-	int decimal = parseHex(hexString);
-	if (decimal != -1)
+	int size;
+	cout << "璇疯緭鍏ユ暟缁勫厓绱犱釜鏁帮細" << endl;
+	cin >> size;
+	int* arr = new int [size];
+	cout << "璇蜂緷娆¤緭鍏ユ暟缁勫厓绱狅細" << endl;
+	for (int i = 0; i < size; i++)
 	{
-		cout << "十六进制字符串 " << hexString << " 转换后的十进制数为: " << decimal << endl;
+		cin >> arr[i];
 	}
+	bubbleSort(arr, size);
+	cout << "鎺掑垪鍚庣殑鏁扮粍涓猴細" << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << *(arr + i) << " ";
+	}
+	delete[]arr;
 	return 0;
 }
